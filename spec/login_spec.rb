@@ -16,7 +16,12 @@ describe 'Login' do
 
   it 'succeeded' do
     @login.with('tomsmith', 'SuperSecretPassword!')
-    sleep(1)
     expect(@login.success_message_present?).to eql true
   end
+
+  it 'failed' do
+    @login.with('asdf', 'asdf')
+    expect(@login.failure_message_present?).to eql true
+  end
+
 end
