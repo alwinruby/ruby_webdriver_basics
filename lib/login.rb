@@ -12,9 +12,12 @@ class Login < BasePage
 
     def initialize(driver)
       super
-      visit 'http://the-internet.herokuapp.com/login'
+      # visit 'http://the-internet.herokuapp.com/login'
+      # raise 'Login page not ready' unless
+      #   @driver.find_element(LOGIN_FORM)
+      visit '/login'
       raise 'Login page not ready' unless
-        @driver.find_element(LOGIN_FORM)
+        is_displayed?(LOGIN_FORM)
     end
 
     def with(username, password)

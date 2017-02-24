@@ -100,4 +100,13 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  config.before(:each) do
+    geckodriver = File.join(Dir.pwd, 'vendor', 'geckodriver')
+    @driver = Selenium::WebDriver.for :firefox, driver_path: geckodriver
+  end
+
+  config.after(:each) do
+    @driver.quit
+  end
+
 end

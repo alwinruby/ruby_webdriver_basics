@@ -1,18 +1,18 @@
 # filename: login_spec.rb
 
-require 'selenium-webdriver'
+# require 'spec_helper'
 require 'login'
 
 describe 'Login' do
   before(:each) do
-    geckodriver = File.join(Dir.pwd, 'vendor', 'geckodriver')
-    @driver = Selenium::WebDriver.for :firefox, driver_path: geckodriver
+    # geckodriver = File.join(Dir.pwd, 'vendor', 'geckodriver')
+    # @driver = Selenium::WebDriver.for :firefox, driver_path: geckodriver
     @login = Login.new(@driver)
   end
 
-  after(:each) do
-    @driver.quit
-  end
+  # after(:each) do
+  #   @driver.quit
+  # end
 
   it 'succeeded' do
     @login.with('tomsmith', 'SuperSecretPassword!')
