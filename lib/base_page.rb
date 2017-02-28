@@ -1,6 +1,4 @@
 # filename: base_page.rb
-require 'selenium-webdriver'
-
 class BasePage
 
   def initialize(driver)

@@ -1,5 +1,5 @@
 # filename: login.rb
-require 'base_page'
+require_relative 'base_page'
 
 class Login < BasePage
 
@@ -12,9 +12,7 @@ class Login < BasePage
 
     def initialize(driver)
       super
-      # visit 'http://the-internet.herokuapp.com/login'
-      # raise 'Login page not ready' unless
-      #   @driver.find_element(LOGIN_FORM)
+
       visit '/login'
       raise 'Login page not ready' unless
         is_displayed?(LOGIN_FORM)
